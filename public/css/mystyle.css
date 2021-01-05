@@ -20,7 +20,14 @@ header {
   filter: blur(3px);
 }
 
-.search-bar .search-bar-outer {
+.center-back {
+  margin: 0 auto;
+  max-width: 680px;
+  margin-top: -50px;
+  margin-bottom: 60px;
+}
+
+.center-bar .center-bar-outer {
   margin: 0 auto;
   max-width: 680px;
   background-color: #fce2cf;
@@ -31,7 +38,7 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.search-bar .search-bar-inner h4 {
+.center-bar .center-bar-inner h4 {
   color: #9b4b4b;
 }
 
@@ -62,7 +69,6 @@ header {
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  font-size: 1.2rem;
 }
 
 .restaurant-category {
@@ -82,6 +88,30 @@ header {
 a {
   text-decoration:none !important;
 }
+.rating_number {
+  border: 0;
+}
+
+input[type="range"] {
+  border: 0;
+  padding-right: 1em !important;
+  padding: 1em;
+  background-color: #fff;
+  height: auto;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none; /*移除選取圓點預設樣式 */
+  background: linear-gradient(#b16060, #9198e5);
+  border: 1px solid #E0E0E0;
+  border-radius: 50%;
+}
+
+.form-control:valid {
+  background: #fff !important;
+}
+
+
 
 @media screen and (max-width: 992px) {
 

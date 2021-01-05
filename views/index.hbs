@@ -1,8 +1,8 @@
 <!-- search bar -->
-<div class="container search-bar">
-  <div class="search-bar-outer">
+<div class="container center-bar">
+  <div class="center-bar-outer">
     <div class="row">
-      <div class="col-9 search-bar-inner">
+      <div class="col-9 center-bar-inner">
         <form action="/search">
           <h4 class="mb-2">尋找餐廳：</h4>
           <div class="input-group">
@@ -24,19 +24,21 @@
 <div class="container mt-5">
   <div class="row row-cols-4">
     {{#each restaurants}}
-    <div class="col">
+    <div class="col mb-5">
       <a href="/restaurant/{{ this._id }}" class="text-secondary">
         <div class="card">
           <div class="card-body px-2 pt-2">
             <img class="card-img-top" src="{{ this.image }}" alt="{{ this.name }}">
-            <h6 class="card-title my-2">{{ this.name }}</h6>
-            <div class="restaurant-category mb-1">
-              <i class="fas fa-utensils pr-2"></i> {{ this.category }}
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{ this.rating }}
-                <i class="fas fa-star fa-xs"></i>
+            <h5 class="card-title mt-3">{{ this.name }}</h5>
+            <div class="card-text restaurant-category mt-3">
+              <span>
+                <i class="fas fa-utensils "></i> {{ this.category }}
               </span>
-              <span class="mr-3">
+              <span class="badge bg-pill bg-danger font-weight-normal ms-2">
+                {{ this.rating }}
+                <i class="fas fa-star"></i>
+              </span>
+              <span class="ms-3">
                 <a href="#"><i class="fas fa-edit"></i></a>
                 <a href="/restaurant/delete/{{ this._id }}"><i class="fas fa-trash"></i></a>
               </span>
