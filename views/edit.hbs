@@ -1,0 +1,93 @@
+<h1 class="restaurant-show-title mb-1">更新餐廳</h1>
+<div class="container center-bar my-4">
+  <div class="center-back">
+    <a class="btn btn-primary mb-3" href="/" role="button"><i class="fas fa-arrow-circle-left"></i> Back</a>
+  </div>
+  <div class="center-bar-outer">
+    <form class="row was-validated" action="/restaurant/edit/{{ restaurant._id }}" method="POST">
+      <div class="col-6 mb-3">
+        <label for="input-name" class="form-label">餐廳名稱</label>
+        <input type="text" name="name" value="{{ restaurant.name }}" class="form-control is-invalid" placeholder="請輸入餐廳名稱" id="input-name" required>
+      </div>
+
+      <div class="col-6 mb-3">
+        <label for="input-name-en" class="form-label">餐廳英文名稱</label>
+        <input type="text" name="name_en" value="{{ restaurant.name_en }}" class="form-control is-invalid" placeholder="請輸入餐廳英文名稱" id="input-name-en" required>
+      </div>
+
+      <div class="col-6 mb-3">
+        <label for="input-category" class="form-label">餐廳類型</label>
+        <input type="text" name="category" value="{{ restaurant.category }}" class="form-control is-invalid" placeholder="請輸入餐廳料理類型" id="input-category" required>
+      </div>
+
+      <div class="col-6 mb-3">
+        <label for="input-rating" class="form-label">餐廳評分</label>
+        <div class="input-group">
+          <input type="text" class="form-control rating_number" spellcheck="false" value="{{ restaurant.rating }} 顆星" disabled="true">
+          <input type="range" name="rating" value="{{ restaurant.rating }}" class="form-control form-range" min="0" max="5" step="0.1" id="range">
+        </div>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="input-group-select-area" class="form-label">餐廳地址</label>
+        <div class="input-group">
+          <select name="area" value="" class="custom-select" id="input-group-select-area">
+            <option value="{{ restaurant.area }}" selected>{{ restaurant.area }}</option>
+            <option value="北部">北部</option>
+            <option value="中部">中部</option>
+            <option value="南部">南部</option>
+          </select>
+          <input type="text" name="location" value="{{ restaurant.location }}" class="form-control" placeholder="請輸入餐廳地址" spellcheck="false" required>
+          <input type="text" name="google_map" value="{{ restaurant.google_map }}" class="form-control" placeholder="請輸入Google Map 地圖網址" spellcheck="false" required>
+        </div>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="input-phone" class="form-label">餐廳電話</label>
+        <input type="text" name="phone" value="{{ restaurant.phone }}" class="form-control is-invalid" placeholder="請輸入餐廳連絡電話" id="input-phone" required>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="input-description" class="form-label">餐廳簡介</label>
+        <textarea name="description" class="form-control is-invalid" placeholder="請輸入餐廳簡介" id="input-description" style="min-height: 100px;" required>{{ restaurant.description }}</textarea>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="input-image" class="form-label">餐廳照片</label>
+        <input name="image" value="{{ restaurant.image }}" class="form-control is-invalid image_input" placeholder="請輸入餐廳照片網址" id="input-image" required>
+      </div>
+
+      {{!--  停用預覽圖
+      <div class="d-flex justify-content-center mb-3">
+        <div class="card d-none" style="width: 18rem;">
+          <h5 class="my-3 text-center">照片預覽</h5>
+          <img src="" class="image_show" alt="照片網址連結失效">
+        </div>
+      </div>
+      --}}
+
+      <button type="submit" class="btn btn-major">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  // display rating text
+  const ratingText = document.querySelector('.rating_number')
+  const ratingRanger = document.querySelector('.form-range')
+  ratingRanger.addEventListener('input', e => {
+    ratingText.value = e.target.value + ' 顆星'
+  })
+
+/* 停用預覽圖
+  // display the picture provided by the user
+  const imageInput = document.querySelector('.image_input')
+  const imageShow = document.querySelector('.image_show')
+  imageInput.addEventListener('input', e => {
+    const srcValue = e.target.value
+    imageShow.src = srcValue
+    imageShow.parentElement.classList.remove('d-none')
+  })
+*/
+</script>

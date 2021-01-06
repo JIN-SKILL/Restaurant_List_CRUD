@@ -3,12 +3,12 @@ const router = express.Router()
 
 const Restaurants = require('../../models/restaurant')
 
-// CRUD create
 router.get('/create', (req, res) => {
   return res.render('new')
 })
 
 router.post('/', (req, res) => {
+  console.log(req.body)
   const { name, name_en, category, rating, area, location, google_map, phone, description, image } = req.body
   return Restaurants.create({
     name: name,
