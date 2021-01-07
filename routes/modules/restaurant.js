@@ -26,7 +26,6 @@ router.post('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
-
 // CRUD read
 router.get('/:id', (req, res) => {
   const id = req.params.id
@@ -35,7 +34,6 @@ router.get('/:id', (req, res) => {
     .then(restaurant => res.render('detail', { restaurant }))
     .catch(error => console.log(error))
 })
-
 
 // CRUD update
 router.get('/edit/:id', (req, res) => {
@@ -78,5 +76,20 @@ router.delete('/:id', (req, res) => {
 })
 
 // search
+router.get('/', (req, res) => {
+  const keyword = req.query.keyword
+  return Restaurants.find()
+    .lean()
+    .then(restaurant => {
+      const searchedRestaurant = []
+      restaurant.forEach(item => {
+        if (item.name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()) || item.category.includes(keyword)) {
+          searchedRestaurant.push(item)
+        }
+      })
+      res.render('index', { restaurants: searchedRestaurant, keyword })
+    })
+    .catch(error => console.log(error))
+})
 
 module.exports = router
