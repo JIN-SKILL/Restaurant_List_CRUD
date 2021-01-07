@@ -1,9 +1,5 @@
-const Restaurant = require('../restaurant')
-const db = require('../config/mongoose')
-
-db.on('error', () => {
-  console.log('mongoDB error!')
-})
+const Restaurant = require('../restaurantSchema')
+const db = require('../../config/mongoose')
 
 db.once('open', () => {
   Restaurant.create(
@@ -11,7 +7,7 @@ db.once('open', () => {
       name: 'Sababa 沙巴巴中東美食',
       name_en: 'Sababa Pita Bar',
       category: '中東料理',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg',
+      image: '/img/01.jpg',
       area: '北部',
       location: '台北市羅斯福路三段 283 巷 17 號',
       phone: '02 2363 8009',
@@ -23,7 +19,7 @@ db.once('open', () => {
       name: '梅子鰻蒲燒專賣店',
       name_en: 'Umeko Japanese Unagi House',
       category: '日本料理',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5628/02.jpg',
+      image: '/img/02.jpg',
       area: '北部',
       location: '台北市中山區林森北路 107 巷 8 號',
       phone: ' 02 2521 2813',
@@ -35,7 +31,7 @@ db.once('open', () => {
       name: 'ZIGA ZIGA',
       name_en: 'Ziga Zaga',
       category: '義式餐廳',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5629/03.jpg',
+      image: '/img/03.jpg',
       area: '北部',
       location: '台北市信義區松壽路 2 號',
       phone: '02 2720 1230',
@@ -47,7 +43,7 @@ db.once('open', () => {
       name: '艾朋牛排餐酒館',
       name_en: 'A Point Steak & Bar',
       category: '美式',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5630/04.jpg',
+      image: '/img/04.jpg',
       area: '北部',
       location: '110 台北市信義區忠孝東路五段 139 號 2 樓',
       phone: '02 2756 7788',
@@ -59,7 +55,7 @@ db.once('open', () => {
       name: 'Gusto Pizza',
       name_en: 'Gusto Pizza',
       category: '義式餐廳',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5631/05.jpg',
+      image: '/img/05.jpg',
       area: '北部',
       location: '北市中正區連雲街 74 號',
       phone: '02 2358 7001',
@@ -71,7 +67,7 @@ db.once('open', () => {
       name: 'WXYZ Bar',
       name_en: 'WXYZ Bar',
       category: '酒吧',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg',
+      image: '/img/06.jpg',
       area: '北部',
       location: '台北市中山區雙城街',
       phone: '02 7743 9999',
@@ -83,7 +79,7 @@ db.once('open', () => {
       name: 'Fika Fika Cafe',
       name_en: 'Fika Fika Cafe',
       category: '咖啡',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5633/07.jpg',
+      image: '/img/07.jpg',
       area: '北部',
       location: '台北市中山區伊通街 33 號',
       phone: '02 2507 0633',
@@ -95,7 +91,7 @@ db.once('open', () => {
       name: '布娜飛比利時啤酒餐廳',
       name_en: 'Bravo Beer',
       category: '義式餐廳',
-      image: 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5634/08.jpg',
+      image: '/img/08.jpg',
       area: '北部',
       location: '台北市松山區市民大道四段 185 號',
       phone: '02 2570 1255',

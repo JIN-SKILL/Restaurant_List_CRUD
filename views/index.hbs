@@ -40,7 +40,7 @@
               </span>
               <span class="ms-3">
                 <a href="/restaurant/edit/{{ this._id }}"><i class="fas fa-edit"></i></a>
-                <a href="/restaurant/delete/{{ this._id }}"><i class="fas fa-trash"></i></a>
+                <button class="btn btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ this._id }}"><i class="pointer fas fa-trash"></i></button>
               </span>
             </div>
           </div>
@@ -48,5 +48,27 @@
       </a>
     </div>
     {{/each}}
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="deleteModalLabel">刪除警示</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        您確定要刪除這筆餐廳資料嗎?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">取消</button>
+        <form action="" method="POST" name="delete_form">
+          <button type="submit" class="btn btn-danger">確認</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>

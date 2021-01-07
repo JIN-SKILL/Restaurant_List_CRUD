@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const Restaurants = require('../../models/restaurant')
+const Restaurants = require('../../models/restaurantSchema')
 
 router.get('/', (req, res) => {
   return Restaurants.find()
