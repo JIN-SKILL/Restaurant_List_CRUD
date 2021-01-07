@@ -124,6 +124,15 @@ input[type="range"]::-webkit-slider-thumb {
   color: #0A5CC6;
 }
 
+.btn-major {
+  color: #fff !important;
+
+}
+
+.bigger:hover {
+  transform: scale(1.1)
+}
+
 @media screen and (max-width: 992px) {
 
   .card img{

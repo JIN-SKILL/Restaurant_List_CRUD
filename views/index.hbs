@@ -1,8 +1,8 @@
 <!-- search bar -->
-<div class="container center-bar">
+{{!-- <div class="container center-bar">
   <div class="center-bar-outer">
     <div class="row">
-      <div class="col-9 center-bar-inner">
+      <div class="col-7 center-bar-inner">
         <form action="/search">
           <h4 class="mb-2">尋找餐廳：</h4>
           <div class="input-group">
@@ -13,9 +13,43 @@
           </div>
         </form>
       </div>
-      <div class="col-3 d-flex justify-content-center align-items-end">
-        {{!-- 預留空間 --}}
+      <div class="col-5 d-flex align-items-end">
+        <div class="btn-group" role="group">
+          <button class="btn btn-major bigger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">排序</button>
+          <div class="dropdown-menu">
+            <button name="role" value="asc" class="dropdown-item">A ~ Z</button>
+            <button name="role" value="desc" class="dropdown-item">Z ~ A</button>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</div> --}}
+
+
+<div class="container center-bar">
+  <div class="center-bar-outer">
+    <div class="center-bar-inner">
+      <h4 class="mb-2">尋找餐廳：</h4>
+      <form action="/search" class="d-flex">
+        <div class="input-group">
+          <input type="text" value="{{ keyword }}" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="" aria-describedby="search-button">
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="dropdown ms-3">
+            <button type="submit" class="btn btn-major bigger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">排序</button>
+            <div class="dropdown-menu">
+              <button name="rule" value="asc" class="dropdown-item">A ~ Z</button>
+              <button name="rule" value="desc" class="dropdown-item">Z ~ A</button>
+            </div>
+          </div>
+          <div class="dropdown"></div>
+          <div class="dropdown"></div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

@@ -77,13 +77,16 @@ router.delete('/:id', (req, res) => {
 
 // search
 router.get('/', (req, res) => {
-  const keyword = req.query.keyword
+  const queryArr = req.query
+  const keyword = queryArr.keyword.toLowerCase().trim()
+  if (!queryArr.rule) queryArr.rule = 'asc'
   return Restaurants.find()
     .lean()
+    .sort({ name: queryArr.rule })
     .then(restaurant => {
       const searchedRestaurant = []
       restaurant.forEach(item => {
-        if (item.name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()) || item.category.includes(keyword)) {
+        if (item.name.toLocaleLowerCase().trim().includes(keyword) || item.category.trim().includes(keyword)) {
           searchedRestaurant.push(item)
         }
       })
