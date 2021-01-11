@@ -1,7 +1,7 @@
 # 台北美食口袋名單
 使用 Express.js + mongoDB 建置的餐廳收藏清單網站，能瀏覽收藏餐廳的詳細資訊，包含餐廳簡介、分類、評分、地址與環境照片等，並進行CRUD功能。
 
-![Restaurant_List]()
+![Restaurant_List](https://raw.githubusercontent.com/JIN-SKILL/Example_Image/main/Restaurant_List_CRUD.png)
 
 ## 網站功能
 + 列出收藏餐廳資訊
@@ -39,7 +39,7 @@
 	```
     npm run seed
     ```
-5. 終端機 (Terminal) 顯示以下內容，即可按兩次 Ctrl+C 跳回控制介面
+4. 終端機 (Terminal) 顯示以下內容，即可按兩次 Ctrl+C 跳回控制介面
 	```
     mongoDB connected.
     Completed seed loading.
