@@ -39,7 +39,7 @@
 	```
     npm run seed
     ```
-4. 終端機 (Terminal) 顯示以下內容，即可按兩次 Ctrl+C 跳回控制介面
+5. 終端機 (Terminal) 顯示以下內容，即可按兩次 Ctrl+C 跳回控制介面
 	```
     mongoDB connected.
     Completed seed loading.
